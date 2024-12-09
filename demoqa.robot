@@ -30,48 +30,45 @@ Clicar Elemento
     Click Element                    ${locator}
 
 Inserir Texto
-    [Timeout]                      10s
-    [Arguments]                    ${locator}    ${texto}
-    Wait Until Element Is Visible  ${locator}
-    Input Text                     ${locator}    ${texto}
+    [Timeout]                        10s
+    [Arguments]                      ${locator}    ${texto}
+    Wait Until Element Is Visible    ${locator}
+    Input Text                       ${locator}    ${texto}
 
 Selecao Por Valor
-    [Timeout]                      10s
-    [Arguments]                    ${locator}    ${valor}
-    Wait Until Element Is Visible  ${locator}
-    Select From List By Value      ${locator}    ${valor}  
+    [Timeout]                        10s
+    [Arguments]                      ${locator}    ${valor}
+    Wait Until Element Is Visible    ${locator}
+    Select From List By Value        ${locator}    ${valor}  
 
 Selecao Por Label
 
 Selecao Por Index
 Abrir o Google Chrome e acessar o site
-    Open Browser    ${URL}    chrome
+    Open Browser                     ${URL}    chrome
     Maximize Browser Window
 
 Preencher os campos First Name, Last Name e Email
-    Inserir Texto    ${FNAME_INPUT}    Fernando
-
-    Inserir Texto    ${LNAME_INPUT}    Veloso
-    
-    Inserir Texto    ${EMAIL_INPUT}    fernandoveloso95@outlook.com
+    Inserir Texto                    ${FNAME_INPUT}    Fernando
+    Inserir Texto                    ${LNAME_INPUT}    Veloso
+    Inserir Texto                    ${EMAIL_INPUT}    fernandoveloso95@outlook.com
 
 Marcar a opção "Male" na área de Gender
-    Clicar Elemento    ${GENDER_RADIO_MALE}
+    Clicar Elemento                  ${GENDER_RADIO_MALE}
 
 Preencher o campo Mobile Number
-    Inserir Texto      ${MOBILE_NUMBER}    9876543210
+    Inserir Texto                    ${MOBILE_NUMBER}    9876543210
 
 Selecionar a data 26 de Setembro de 1995 em Date of Birth 
-    Clicar Elemento    ${BIRTH_SELECT}
-    Click Element                xpath=//select[contains(@class,'react-datepicker__month-select')]
-    Select From List By Index    xpath=//select[contains(@class,'react-datepicker__month-select')]    8
-    Selecao Por Valor            //select[@class='react-datepicker__year-select']    1995
-    Click Element                xpath=//div[contains(@class,'react-datepicker__day--026') and not(contains(@class,'--outside-month'))]
+    Clicar Elemento                  ${BIRTH_SELECT}
+    Click Element                    xpath=//select[contains(@class,'react-datepicker__month-select')]
+    Select From List By Index        xpath=//select[contains(@class,'react-datepicker__month-select')]    8
+    Selecao Por Valor                //select[@class='react-datepicker__year-select']    1995
+    Click Element                    xpath=//div[contains(@class,'react-datepicker__day--026') and not(contains(@class,'--outside-month'))]
     
 
 Preencher o campo Subjects com o assunto "Vasco da Gama!"
-    Wait Until Element Is Visible    ${SUBJECTS_INPUT}    10s
-    Input Text                       ${SUBJECTS_INPUT}    Vasco da Gama!
+    Inserir Texto                    ${SUBJECTS_INPUT}    Vasco da Gama
     Press Key                        ${SUBJECTS_INPUT}    ENTER
 
 Fechar navegador
