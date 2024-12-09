@@ -38,7 +38,7 @@ Preencher os campos First Name, Last Name e Email
 
 Marcar a opção "Male" na área de Gender
     Wait Until Element Is Visible    ${GENDER_RADIO_MALE}    10s
-    Click Element                   ${GENDER_RADIO_MALE}
+    Click Element                    ${GENDER_RADIO_MALE}
 
 Preencher o campo Mobile Number
     Wait Until Element Is Visible    ${MOBILE_NUMBER}    10s
