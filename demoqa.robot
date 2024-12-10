@@ -41,8 +41,6 @@ Selecao Por Valor
     Wait Until Element Is Visible    ${locator}
     Select From List By Value        ${locator}    ${valor}  
 
-Selecao Por Label
-
 Selecao Por Index
 Abrir o Google Chrome e acessar o site
     Open Browser                     ${URL}    chrome
@@ -59,17 +57,14 @@ Marcar a opção "Male" na área de Gender
 Preencher o campo Mobile Number
     Inserir Texto                    ${MOBILE_NUMBER}    9876543210
 
-Selecionar a data 26 de Setembro de 1995 em Date of Birth 
+Selecionar a data 26 de Setembro de 1995 em Date of Birth
     Clicar Elemento                  ${BIRTH_SELECT}
-    Click Element                    xpath=//select[contains(@class,'react-datepicker__month-select')]
     Select From List By Index        xpath=//select[contains(@class,'react-datepicker__month-select')]    8
-    Selecao Por Valor                //select[@class='react-datepicker__year-select']    1995
-    Click Element                    xpath=//div[contains(@class,'react-datepicker__day--026') and not(contains(@class,'--outside-month'))]
-    
+    Select From List By Value        xpath=//select[@class='react-datepicker__year-select']    1995
+    Clicar Elemento                  xpath=//div[contains(@class,'react-datepicker__day--026') and not(contains(@class,'--outside-month'))]
 
 Preencher o campo Subjects com o assunto "Vasco da Gama!"
     Inserir Texto                    ${SUBJECTS_INPUT}    Vasco da Gama
-    Press Key                        ${SUBJECTS_INPUT}    ENTER
 
 Fechar navegador
     Close Browser
