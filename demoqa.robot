@@ -18,13 +18,13 @@ ${ARQUIVO}                   C:/projetos robot/robot projetos pessoais/arquivos/
 
 *** Test Cases ***
 Cenário 1: Realizando meu cadastro com todas as informações necessárias
-    [Setup]    Abrir o Google Chrome e acessar o site
-    Preencher os campos First Name, Last Name e Email
-    Marcar a opção "Male" na área de Gender
-    Preencher o campo Mobile Number
-    Selecionar a data 26 de Setembro de 1995 em Date of Birth
-    Preencher o campo Subjects com o assunto "Vasco da Gama!"
-    Clicar nos botões para marcar meus hobbies
+    [Setup]    Abrir O Navegador E Acessar O Site
+    Preencher Os Campos De Cadastro: Nome, Sobrenome E Email
+    Selecionar A Opcao "Male"
+    Preencher O Numero De Telefone
+    Selecionar A Data 26 De Setembro De 1995
+    Preencher O Assunto
+    Selecionar Meus Hobbies
     Subir arquivo
     Manter navegador aberto após o teste
 
@@ -69,33 +69,33 @@ Selecao Por Index
     Wait Until Element Is Visible    ${locator}
     Select From List By Index        ${locator}    ${index}
 
-Abrir o Google Chrome e acessar o site
+Abrir O Navegador E Acessar O Site
     Open Browser                     ${URL}            chrome
     Maximize Browser Window
 
-Preencher os campos First Name, Last Name e Email
+Preencher Os Campos De Cadastro: Nome, Sobrenome E Email
     Inserir Texto                    ${FNAME_INPUT}    Fernando
     Inserir Texto                    ${LNAME_INPUT}    Veloso
     Inserir Texto                    ${EMAIL_INPUT}    fernandoveloso95@outlook.com
 
-Marcar a opção "Male" na área de Gender
+Selecionar A Opcao "Male"
     Clicar Elemento                  ${GENDER_RADIO_MALE}
 
-Preencher o campo Mobile Number
+Preencher O Numero De Telefone
     Inserir Texto                    ${MOBILE_NUMBER}    9876543210
 
-Selecionar a data 26 de Setembro de 1995 em Date of Birth 
+Selecionar A Data 26 De Setembro De 1995
     Clicar Elemento                  ${BIRTH_SELECT}
     Selecao Por Index                xpath=//select[contains(@class,'react-datepicker__month-select')]    8
     Selecao Por Valor                //select[@class='react-datepicker__year-select']    1995
     Clicar Elemento                  xpath=//div[contains(@class,'react-datepicker__day--026') and not(contains(@class,'--outside-month'))]
 
-Preencher o campo Subjects com o assunto "Vasco da Gama!"
+Preencher O Assunto
     Inserir Texto                    ${SUBJECTS_INPUT}    Vasco da Gama!
 
     Execute JavaScript               window.scrollBy(0, 300)
 
-Clicar nos botões para marcar meus hobbies
+Selecionar Meus Hobbies
     Clicar Elemento                 ${HOBBIES_1}
     Clicar Elemento                 ${HOBBIES_3}
 
