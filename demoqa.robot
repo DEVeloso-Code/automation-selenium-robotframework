@@ -13,7 +13,8 @@ ${SUBJECTS_INPUT}            id:subjectsInput
 ${HOBBIES_1}                 xpath=//label[@for='hobbies-checkbox-1']
 ${HOBBIES_3}                 xpath=//label[@for='hobbies-checkbox-3']
 ${UPLOAD_PICTURE}            xpath=//input[@id='uploadPicture']
-${ARQUIVO}                   C:\projetos robot\robot projetos pessoais\arquivos\bailarinaddd.png
+${ARQUIVO}                   C:/projetos robot/robot projetos pessoais/arquivos/bailarinaddd.png
+
 
 *** Test Cases ***
 Cenário 1: Realizando meu cadastro com todas as informações necessárias
@@ -24,6 +25,7 @@ Cenário 1: Realizando meu cadastro com todas as informações necessárias
     Selecionar a data 26 de Setembro de 1995 em Date of Birth
     Preencher o campo Subjects com o assunto "Vasco da Gama!"
     Clicar nos botões para marcar meus hobbies
+    Subir arquivo
     Manter navegador aberto após o teste
 
 *** Keywords ***
@@ -31,8 +33,17 @@ Cenário 1: Realizando meu cadastro com todas as informações necessárias
 Clicar Elemento
     [Timeout]                        10s
     [Arguments]                      ${locator}
-    Wait Until Element Is Visible    ${locator}
+    Wait Until Element Is Visible    ${locator}    10s
+    Wait Until Element Is Enabled    ${locator}    10s
     Click Element                    ${locator}
+
+
+
+Subir arquivo
+    Scroll To Element                ${UPLOAD_PICTURE}
+    Wait Until Element Is Visible    ${UPLOAD_PICTURE}    10s
+    Choose File                      ${UPLOAD_PICTURE}    ${ARQUIVO}
+
 
 Inserir Texto
     [Timeout]                        10s
@@ -59,7 +70,7 @@ Selecao Por Index
     Select From List By Index        ${locator}    ${index}
 
 Abrir o Google Chrome e acessar o site
-    Open Browser                     ${URL}        chrome
+    Open Browser                     ${URL}            chrome
     Maximize Browser Window
 
 Preencher os campos First Name, Last Name e Email
@@ -85,8 +96,12 @@ Preencher o campo Subjects com o assunto "Vasco da Gama!"
     Execute JavaScript               window.scrollBy(0, 300)
 
 Clicar nos botões para marcar meus hobbies
-    Selecao Por Label                ${HOBBIES_1}    Sports
-    Selecao Por Label                ${HOBBIES_3}    Music
+    Clicar Elemento                 ${HOBBIES_1}
+    Clicar Elemento                 ${HOBBIES_3}
+
+Subir arquivo
+    Clicar Botao                     ${UPLOAD_PICTURE}
+    Choose File                      ${UPLOAD_PICTURE}    ${ARQUIVO}      
 
 Manter navegador aberto após o teste
     Sleep    60s
