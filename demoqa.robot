@@ -2,9 +2,9 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${URL}                        https://demoqa.com/automation-practice-form
-${FNAME_INPUT}                id:firstName
-${LNAME_INPUT}                id:lastName
+${URL}                       https://demoqa.com/automation-practice-form
+${FNAME_INPUT}               id:firstName
+${LNAME_INPUT}               id:lastName
 ${EMAIL_INPUT}               id:userEmail
 ${GENDER_RADIO_MALE}         //label[@for='gender-radio-1']
 ${MOBILE_NUMBER}             id:userNumber
@@ -26,7 +26,7 @@ Cenário 1: Realizando meu cadastro com todas as informações necessárias
     Preencher O Assunto
     Selecionar Meus Hobbies
     Carregar Arquivo
-    Manter navegador aberto após o teste
+    Manter Navegador Aberto
 
 *** Keywords ***
 
@@ -57,6 +57,7 @@ Selecao Por Valor
     Wait Until Element Is Visible    ${locator}
     Select From List By Value        ${locator}    ${valor}  
 
+
 Selecao Por Label
     [Timeout]                        10s
     [Arguments]                      ${locator}    ${valor}
@@ -86,6 +87,15 @@ Preencher O Numero De Telefone
 
 Selecionar A Data 26 De Setembro De 1995
     Clicar Elemento                  ${BIRTH_SELECT}
+    Select From List By Index        xpath=//select[contains(@class,'react-datepicker__month-select')]    8
+    Select From List By Value        xpath=//select[@class='react-datepicker__year-select']    1995
+    Clicar Elemento                  xpath=//div[contains(@class,'react-datepicker__day--026') and not(contains(@class,'--outside-month'))]
+
+Preencher o campo Subjects com o assunto "Vasco da Gama!"
+    Inserir Texto                    ${SUBJECTS_INPUT}    Vasco da Gama
+
+Selecionar A Data 26 De Setembro De 1995
+    Clicar Elemento                  ${BIRTH_SELECT}
     Selecao Por Index                xpath=//select[contains(@class,'react-datepicker__month-select')]    8
     Selecao Por Valor                //select[@class='react-datepicker__year-select']    1995
     Clicar Elemento                  xpath=//div[contains(@class,'react-datepicker__day--026') and not(contains(@class,'--outside-month'))]
@@ -103,5 +113,5 @@ Carregar Arquivo
     Clicar Botao                     ${UPLOAD_PICTURE}
     Choose File                      ${UPLOAD_PICTURE}    ${ARQUIVO}      
 
-Manter navegador aberto após o teste
+Manter Navegador Aberto
     Sleep    60s
