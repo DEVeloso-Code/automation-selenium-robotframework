@@ -25,7 +25,7 @@ Cenário 1: Realizando meu cadastro com todas as informações necessárias
     Selecionar A Data 26 De Setembro De 1995
     Preencher O Assunto
     Selecionar Meus Hobbies
-    Subir arquivo
+    Carregar Arquivo
     Manter navegador aberto após o teste
 
 *** Keywords ***
@@ -99,7 +99,7 @@ Selecionar Meus Hobbies
     Clicar Elemento                 ${HOBBIES_1}
     Clicar Elemento                 ${HOBBIES_3}
 
-Subir arquivo
+Carregar Arquivo
     Clicar Botao                     ${UPLOAD_PICTURE}
     Choose File                      ${UPLOAD_PICTURE}    ${ARQUIVO}      
 
