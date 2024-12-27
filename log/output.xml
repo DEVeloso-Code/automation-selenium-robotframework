@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-12-27T13:52:49.117041" rpa="false" schemaversion="5">
+<suite id="s1" name="Demoqa" source="C:\projetos robot\robot projetos pessoais\demoqa.robot">
+<test id="s1-t1" name="Cenário 1: Realizando meu cadastro com todas as informações necessárias" line="20">
+<kw name="Abrir O Navegador E Acessar O Site" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-27T13:52:49.557073" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/automation-practice-form'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-27T13:52:49.557073" elapsed="5.473766"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.030839" elapsed="0.047993"/>
+</kw>
+<status status="PASS" start="2024-12-27T13:52:49.556065" elapsed="5.522767"/>
+</kw>
+<kw name="Preencher Os Campos De Cadastro: Nome, Sobrenome E Email">
+<kw name="Inserir Texto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.079848" elapsed="0.040714"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T13:52:55.120562" level="INFO">Typing text 'Fernando' into text field 'id:firstName'.</msg>
+<arg>${locator}</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.120562" elapsed="0.105944"/>
+</kw>
+<arg>${FNAME_INPUT}</arg>
+<arg>Fernando</arg>
+<timeout value="10 seconds"/>
+<status status="PASS" start="2024-12-27T13:52:55.079848" elapsed="0.146658"/>
+</kw>
+<kw name="Inserir Texto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.227507" elapsed="0.025959"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T13:52:55.254749" level="INFO">Typing text 'Veloso' into text field 'id:lastName'.</msg>
+<arg>${locator}</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.253466" elapsed="0.097548"/>
+</kw>
+<arg>${LNAME_INPUT}</arg>
+<arg>Veloso</arg>
+<timeout value="10 seconds"/>
+<status status="PASS" start="2024-12-27T13:52:55.227507" elapsed="0.123507"/>
+</kw>
+<kw name="Inserir Texto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.351014" elapsed="0.186292"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T13:52:55.537306" level="INFO">Typing text 'fernandoveloso95@outlook.com' into text field 'id:userEmail'.</msg>
+<arg>${locator}</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.537306" elapsed="0.144417"/>
+</kw>
+<arg>${EMAIL_INPUT}</arg>
+<arg>fernandoveloso95@outlook.com</arg>
+<timeout value="10 seconds"/>
+<status status="PASS" start="2024-12-27T13:52:55.351014" elapsed="0.330709"/>
+</kw>
+<status status="PASS" start="2024-12-27T13:52:55.078832" elapsed="0.602891"/>
+</kw>
+<kw name="Selecionar A Opcao &quot;Male&quot;">
+<kw name="Clicar Elemento">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.682727" elapsed="0.017876"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.701617" elapsed="0.022198"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-27T13:52:55.723815" level="INFO">Clicking element '//label[@for='gender-radio-1']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.723815" elapsed="0.056935"/>
+</kw>
+<arg>${GENDER_RADIO_MALE}</arg>
+<timeout value="10 seconds"/>
+<status status="PASS" start="2024-12-27T13:52:55.682727" elapsed="0.098023"/>
+</kw>
+<status status="PASS" start="2024-12-27T13:52:55.682727" elapsed="0.098023"/>
+</kw>
+<kw name="Preencher O Numero De Telefone">
+<kw name="Inserir Texto">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.782123" elapsed="0.019912"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T13:52:55.803466" level="INFO">Typing text '9876543210' into text field 'id:userNumber'.</msg>
+<arg>${locator}</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T13:52:55.802035" elapsed="0.103419"/>
+</kw>
+<arg>${MOBILE_NUMBER}</arg>
+<arg>9876543210</arg>
+<timeout value="10 seconds"/>
+<status status="PASS" start="2024-12-27T13:52:55.780750" elapsed="0.124704"/>
+</kw>
+<status status="PASS" start="2024-12-27T13:52:55.780750" elapsed="0.124704"/>
+</kw>
+<kw name="Selecionar A Data 26 De Setembro De 1995">
+<msg time="2024-12-27T13:52:55.905454" level="FAIL">Keyword with same name defined multiple times.</msg>
+<status status="FAIL" start="2024-12-27T13:52:55.905454" elapsed="0.000000">Keyword with same name defined multiple times.</status>
+</kw>
+<kw name="Preencher O Assunto">
+<status status="NOT RUN" start="2024-12-27T13:52:55.905454" elapsed="0.000000"/>
+</kw>
+<kw name="Selecionar Meus Hobbies">
+<status status="NOT RUN" start="2024-12-27T13:52:55.905454" elapsed="0.000000"/>
+</kw>
+<kw name="Carregar Arquivo">
+<status status="NOT RUN" start="2024-12-27T13:52:55.905454" elapsed="0.001503"/>
+</kw>
+<kw name="Manter Navegador Aberto">
+<status status="NOT RUN" start="2024-12-27T13:52:55.906957" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-27T13:52:49.556065" elapsed="6.350892">Keyword with same name defined multiple times.</status>
+</test>
+<status status="FAIL" start="2024-12-27T13:52:49.133837" elapsed="6.774131"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Demoqa">Demoqa</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-27T13:52:49.108912" level="ERROR">Error in file 'C:\projetos robot\robot projetos pessoais\demoqa.robot' on line 97: Creating keyword 'Selecionar A Data 26 De Setembro De 1995' failed: Keyword with same name defined multiple times.</msg>
+</errors>
+</robot>

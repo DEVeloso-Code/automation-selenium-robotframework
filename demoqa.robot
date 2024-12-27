@@ -37,13 +37,10 @@ Clicar Elemento
     Wait Until Element Is Enabled    ${locator}    10s
     Click Element                    ${locator}
 
-
-
 Subir arquivo
     Scroll To Element                ${UPLOAD_PICTURE}
     Wait Until Element Is Visible    ${UPLOAD_PICTURE}    10s
     Choose File                      ${UPLOAD_PICTURE}    ${ARQUIVO}
-
 
 Inserir Texto
     [Timeout]                        10s
@@ -56,7 +53,6 @@ Selecao Por Valor
     [Arguments]                      ${locator}    ${valor} 
     Wait Until Element Is Visible    ${locator}
     Select From List By Value        ${locator}    ${valor}  
-
 
 Selecao Por Label
     [Timeout]                        10s
@@ -106,11 +102,11 @@ Preencher O Assunto
     Execute JavaScript               window.scrollBy(0, 300)
 
 Selecionar Meus Hobbies
-    Clicar Elemento                 ${HOBBIES_1}
-    Clicar Elemento                 ${HOBBIES_3}
+    Clicar Elemento                  ${HOBBIES_1}
+    Clicar Elemento                  ${HOBBIES_3}
 
 Carregar Arquivo
-    Clicar Botao                     ${UPLOAD_PICTURE}
+#Nao e necessario    Clicar Botao                     ${UPLOAD_PICTURE} 
     Choose File                      ${UPLOAD_PICTURE}    ${ARQUIVO}      
 
 Manter Navegador Aberto
